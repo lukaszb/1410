@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# requires imagemagick
+
+# combine frames into single files
+for dir in $(ls -d */ | tr -d /); do
+    convert $dir/*.png +append ../../dist/assets/$dir.png
+done

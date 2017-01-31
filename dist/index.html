@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>1410</title>
+        <style>
+
+            html {
+                width: 100%;
+                height: 100%;
+                min-height: 100%;
+                margin: 0;
+                padding: 0;
+                background: url('assets/mapa.jpg') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            body {
+                font-family: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .game-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            #game {
+                align-self: center;
+                margin: 0px auto;
+                cursor: none;
+                position: relative;
+                top: 20px;
+                z-index: 150;
+                width: 960px;
+                height: 640px;
+
+            }
+
+            #game::after {
+                content: " ";
+                display: block;
+                width: 1025px;
+                height: 1064px;
+                position: absolute;
+                top: -190px;
+                left: -32px;
+                background: url('assets/game-overlay2.png') no-repeat top center;
+                z-index: 200;
+                pointer-events: none;
+
+            }
+
+            @media screen and (min-height: 900px) {
+                #game::after {
+                    background: url('assets/game-overlay.png') no-repeat top center;
+                }
+            }
+
+            #game::before {
+                content: "ver. 0.03";
+                z-index: 220;
+                position: absolute;
+                bottom: -16px;
+                width: 100px;
+                text-align: center;
+                color: #ae967a;
+                font-size: 12px;
+                font-weight: bold;
+                text-shadow: 0px 1px 1px #000;
+                left: calc(50% - 53px);
+            }
+
+            #game canvas {
+                background: #000 url('assets/loading.gif') no-repeat center center;
+                margin: 0 auto;
+                border-radius: 5px;
+                width: 960px !important;
+                height: 640px !important;
+                z-index: 150;
+            }
+
+        </style>
+    </head>
+    <body oncontextmenu="return false;">
+        <script src="/js/phaser.2.6.2.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script>
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 74:
+                    var i = document.documentElement;
+                    // go full-screen
+                    if (i.requestFullscreen) {
+                        i.requestFullscreen();
+                    } else if (i.webkitRequestFullscreen) {
+                        i.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    } else if (i.mozRequestFullScreen) {
+                        i.mozRequestFullScreen();
+                    } else if (i.msRequestFullscreen) {
+                        i.msRequestFullscreen();
+                    }
+                    break;
+            }
+        };
+        </script>
+
+        <div class="game-container">
+            <div id="game"></div>
+        </div>
+    </body>
+</html>
