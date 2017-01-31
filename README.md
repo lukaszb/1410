@@ -13,3 +13,13 @@ Run server
 And in another terminal:
 
     webpack --watch
+
+
+## Credits
+
+This game was created as a fun project during annual hackaton organized
+internally within [Applause company](https://www.applause.com/).
+
+- Design & trailer: Tomasz Zych (http://rysownik.com)
+- Programming: [Maciej Konieczny](https://github.com/narfdotpl) & [Łukasz Balcerzak](https://github.com/lukaszb)
+- Testing: Przemysław Moszumański
