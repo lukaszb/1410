@@ -1,6 +1,6 @@
 # 1410 - Wrath of the Ulrich
 
-[trailer](https://youtu.be/5_WDcsHcp_Y)
+[![Trailer](https://lukaszb.github.io/1410/dist/img/trailer.png)](https://youtu.be/5_WDcsHcp_Y)
 
 
 ## Development
